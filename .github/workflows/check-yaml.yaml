@@ -21,10 +21,10 @@ jobs:
         uses: tj-actions/changed-files@v41
         with:
           files: |
-            .github/workflows/**.yml
+            .github/workflows/**.yaml
       - name: Validate workflows
         if: steps.check-for-changed-workflows.outputs.any_changed == 'true'
-        uses: dsanders11/json-schema-validate-action@@v1.1.2
+        uses: dsanders11/json-schema-validate-action@v1.1.2
         with:
           schema: https://json.schemastore.org/github-workflow.json
-          files: .github/workflows/**.yml 
+          files: .github/workflows/**.yaml 
