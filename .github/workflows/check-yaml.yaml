@@ -2,6 +2,7 @@ name: Check Yaml
 
 on:
   pull_request:
+    types: [opened, reopened]
   push:
     branches:
       - main
@@ -24,7 +25,7 @@ jobs:
             .github/workflows/**.yml
       - name: Validate workflows
         if: steps.check-for-changed-workflows.outputs.any_changed == 'true'
-        uses: dsanders11/json-schema-validate-action@main
+        uses: dsanders11/json-schema-validate-action@@v1.1.2
         with:
           schema: https://json.schemastore.org/github-workflow.json
           files: .github/workflows/**.yml 
