@@ -16,6 +16,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Check for any changed workflows
         id: check-for-changed-workflows
         uses: tj-actions/changed-files@v41
